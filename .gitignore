@@ -1,0 +1,4 @@
+*.pyc
+*.swp
+config.py
+dribble_contest/static/application.js

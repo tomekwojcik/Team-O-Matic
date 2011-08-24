@@ -1,0 +1,12 @@
+#page {
+    margin-top: 100px;
+    position: relative;
+}
+
+#alert {
+    display: none;
+    margin: 0px;
+    position: absolute;
+    top: -48px;
+    width: 910px;
+}

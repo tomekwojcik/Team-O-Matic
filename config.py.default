@@ -1,0 +1,6 @@
+# -*- coding: utf-8 -*-
+
+# app_config holds configuration setting passed to tornado.web.Application instance.
+app_config = {
+    'debug': True
+}
