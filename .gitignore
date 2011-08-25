@@ -1,4 +1,5 @@
 *.pyc
 *.swp
+*.log
 config.py
 teamomatic/static/application.js
