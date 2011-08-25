@@ -35,7 +35,7 @@ $(document).ready( ->
             $('tr', tbody).detach()
             i = 1
             for team in ajax_response
-                team_members = team.join(', ')
+                team_members = team.join(' i ')
                 $("<tr><td>#{i}</td><td>#{team_members}</td></tr>").appendTo(tbody)
                 i += 1
                 
