@@ -35,12 +35,7 @@ $(document).ready( ->
             $('tr', tbody).detach()
             i = 1
             for team in ajax_response
-                team_members = ''
-                sep = ''
-                for member in team
-                    team_members += sep + member.trim()
-                    sep = ', '
-                
+                team_members = team.join(', ')
                 $("<tr><td>#{i}</td><td>#{team_members}</td></tr>").appendTo(tbody)
                 i += 1
                 
@@ -55,8 +50,8 @@ $(document).ready( ->
             ajax_complete()
         
         data = []
-        for item in $('#people').val().split(',')
-            data[_i] = item.trim()
+        for item in $("#form input[type=checkbox]:checked")
+            data[_i] = $(item).val()
             
         $.ajax({
             url: '/',
