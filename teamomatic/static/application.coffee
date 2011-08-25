@@ -71,4 +71,10 @@ $(document).ready( ->
         
         false
     )
+    
+    $('#footer span').click( ->
+        $('#submit').jrumble({
+            rumbleEvent: 'constant'
+        })
+    )
 )
