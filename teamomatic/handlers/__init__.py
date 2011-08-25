@@ -42,7 +42,7 @@ class IndexHandler(tornado.web.RequestHandler):
             except:
                 break
             
-        if len(payload) == 0 or len(payload) % 2 != 0:
+        if len(payload) < 2:
             raise tornado.web.HTTPError(400)
         
         teams = []
@@ -50,11 +50,19 @@ class IndexHandler(tornado.web.RequestHandler):
             _payload = copy(payload)
             shuffle(_payload)
             _teams = []
-            while len(_payload) > 0:
+            while len(_payload) > 1:
                 team = sample(_payload, 2)
                 _teams.append(team)
                 for item in team:
                     _payload.remove(item)
+                    
+            if len(_payload) == 1:
+                new_member = sample(payload, 1)[0]
+                while new_member == _payload[0]:
+                    new_member = sample(payload, 1)[0]
+                _payload.append(new_member)
+                _teams.append(_payload)
+                
             teams.append(_teams)
             
         self.write({ 'teams': sample(teams, 1)[0]})
