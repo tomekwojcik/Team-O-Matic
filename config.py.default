@@ -2,5 +2,6 @@
 
 # app_config holds configuration setting passed to tornado.web.Application instance.
 app_config = {
-    'debug': True
+    'debug': True,
+    'people': [ 'Jean-Luc Picard', 'William Riker', 'Data', 'Beverly Crusher', 'Deanna Troi', 'Worf', 'Geordi La Forge', 'Wesley Crusher', 'Tasha Yar', 'Katherine Pulaski' ]
 }

@@ -25,15 +25,9 @@
                         <label for="people">Lista zawodników</label>
                         <div class="input">
                             <ul class="inputs-list">
-                                <li><label><input type="checkbox" checked="checked" value="Achim" />&nbsp;<span>Achim</span></label></li>
-                                <li><label><input type="checkbox" checked="checked" value="Adrian" />&nbsp;<span>Adrian</span></label></li>
-                                <li><label><input type="checkbox" checked="checked" value="Dawid K" />&nbsp;<span>Dawid K</span></label></li>
-                                <li><label><input type="checkbox" checked="checked" value="Dawid M" />&nbsp;<span>Dawid M</span></label></li>
-                                <li><label><input type="checkbox" checked="checked" value="Karol" />&nbsp;<span>Karol</span></label></li>
-                                <li><label><input type="checkbox" checked="checked" value="Krzysiek" />&nbsp;<span>Krzysiek</span></label></li>
-                                <li><label><input type="checkbox" checked="checked" value="Paweł" />&nbsp;<span>Paweł</span></label></li>
-                                <li><label><input type="checkbox" checked="checked" value="Tomek" />&nbsp;<span>Tomek</span></label></li>
-                                <li><label><input type="checkbox" checked="checked" value="Wojtek" />&nbsp;<span>Wojtek</span></label></li>
+                            {% for person in people %}
+                                <li><label><input type="checkbox" checked="checked" value="{{ person }}" />&nbsp;<span>{{ person }}</span></label></li>
+                            {% end %}
                             </ul>
                         </div>
                     </div>

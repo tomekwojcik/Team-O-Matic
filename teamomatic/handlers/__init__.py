@@ -28,7 +28,7 @@ from random import sample, shuffle
 
 class IndexHandler(tornado.web.RequestHandler):
     def get(self):
-        self.render('../templates/index.html')
+        self.render('../templates/index.html', people=self.application.settings['people'])
         
     def post(self):
         try:
