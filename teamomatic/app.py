@@ -22,6 +22,7 @@
 """Application factory."""
 
 import tornado.web
+import tornado.locale
 import teamomatic.handlers
 import logging
 import os
@@ -37,6 +38,8 @@ def create_app(config=None):
         raise RuntimeError('No configuration given.')
         
     config['static_path'] = os.path.join(os.path.dirname(__file__), 'static')
+    
+    tornado.locale.load_translations(os.path.join(os.path.dirname(__file__), 'translations'))
     
     logging_config = {
         'format': "%(asctime)s %(name)s <%(levelname)s>: %(message)s",

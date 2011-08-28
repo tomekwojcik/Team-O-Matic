@@ -22,11 +22,30 @@
 """Common handler-specific things."""
 
 import tornado.web
+import tornado.locale
 import json
 from copy import copy
 from random import sample, shuffle
 
 class IndexHandler(tornado.web.RequestHandler):
+    def get_user_locale(self):
+        locale = 'en_US'
+        try:
+            locale = self.application.settings['locale']
+        except:
+            pass
+        
+        return tornado.locale.get(locale)
+        
+    def get_error_html(self, status_code, **kwargs):
+        response = ''
+        if status_code == 400:
+            response = self.locale.translate('The form is invalid.')
+        else:
+            response = self.locale.translate('Application error has occurred. Please try again later.')
+            
+        return json.dumps(response)
+    
     def get(self):
         self.render('../templates/index.html', people=self.application.settings['people'])
         

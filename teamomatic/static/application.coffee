@@ -35,7 +35,7 @@ $(document).ready( ->
             $('tr', tbody).detach()
             i = 1
             for team in ajax_response
-                team_members = team.join(' i ')
+                team_members = team.join(', ')
                 $("<tr><td>#{i}</td><td>#{team_members}</td></tr>").appendTo(tbody)
                 i += 1
                 
@@ -43,10 +43,7 @@ $(document).ready( ->
             ajax_complete()
             
         ajax_error = ->
-            if ajax_response.status == 400
-                display_error('Coś nie halo w formularzu.')
-            else
-                display_error('Coś nie halo na serwerze.')
+            display_error($.parseJSON(ajax_response.responseText))
             ajax_complete()
         
         data = []

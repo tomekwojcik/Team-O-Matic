@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-    <title>Drużynorób</title>
+    <title>{{ _('Team-O-Matic') }}</title>
     <meta equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" type="text/css" href="{{ static_url('bootstrap-1.1.0.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ static_url('teamomatic.css') }}" />
@@ -12,17 +12,17 @@
 <body>
     <div id="page" class="container">
         <div class="page-header">
-            <h1>Drużynorób <small>Kopie tyłek</small></h1>
+            <h1>{{ _('Team-O-Matic') }} <small>{{ _('Kicks butt') }}</small></h1>
         </div>
         <div class="row">
             <div class="span4 columns">
-                <h2>Ustawienia</h2>
-                <p>Podaj dane niezbędne do wygenerowania listy drużyn.</p>
+                <h2>{{ _('Settings') }}</h2>
+                <p>{{ _('Fill the form so we can create teams.') }}</p>
             </div>
             <div class="span12 columns">
                 <form id="form">
                     <div class="clearfix">
-                        <label for="people">Lista zawodników</label>
+                        <label for="people">{{ _('Players') }}</label>
                         <div class="input">
                             <ul class="inputs-list">
                             {% for person in people %}
@@ -32,35 +32,35 @@
                         </div>
                     </div>
                     <div class="actions">
-                        <button id="submit" class="btn primary" type="submit">Jazda!</button>
+                        <button id="submit" class="btn primary" type="submit">{{ _('Go!') }}</button>
                     </div>
                 </form>
             </div>
         </div>
         <div id="result" class="row">
             <div class="span4 columns">
-                <h2>Drużyny</h2>
-                <p>Tu będzie (lub jest) lista drużyn.</p>
+                <h2>{{ _('Teams') }}</h2>
+                <p>{{ _('Teams list will be (or is) here.') }}</p>
             </div>
             <div class="span12 columns">
                 <table class="common-table zebra-stripped">
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th>Zawodnicy</th>
+                            <th>{{ _('Players') }}</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td colspan="2">Brak danych</td>
+                            <td colspan="2">{{ _('No teams (yet)') }}</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </div>
-        <p id="footer">Drużynorób is powered by <a href="http://www.bthlabs.pl/">BTHLabs</a> &amp; <a href="http://twitter.github.com/bootstrap">Bootstrap</a>. For teh <span>lulz.</span></p>
+        <p id="footer">{{ _('Team-O-Matic') }} is powered by <a href="http://www.bthlabs.pl/">BTHLabs</a> &amp; <a href="http://twitter.github.com/bootstrap">Bootstrap</a>. For teh <span>lulz.</span></p>
         <div id="alert" class="alert-message error">
-            <p>Coś poszło nie tak.</p>
+            <p>Blah.</p>
         </div>
     </div>
 </body>
